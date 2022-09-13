@@ -23,7 +23,7 @@ export const printUserInfo = ({
   username, 
   name: {first, last}, 
   info: {favorites: {food, color}},
-  info: {pet: {type, name}},
+  info: {pet: {name}},
   info: {address: {street, number, city, country}}
 }) => {
   return `
@@ -47,16 +47,20 @@ export const printUserInfo = ({
 // REQS: use rest parameters
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
-export const getSum = ( getSum ) => {
-
+export const getSum = (...args) => {
+  return args.reduce((acc, curr) => acc + curr, 0)
 }
+
 
 // INPUT: an unknown number of arguments
 // OUTPUT: an array with the first two arguments destructured and the remaining in a nested array
 // REQS: use rest parameters
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
-export const getFirstTwoArgs = () => {}
+export const getFirstTwoArgs = (arg1, arg2, ...args) => {
+  return [arg1, arg2, args]
+}
+
 
 // INPUT: an object with the following structure
 // {
@@ -79,16 +83,30 @@ export const getFirstTwoArgs = () => {}
 //    return a NEW object, do not modify the object passed in to the function
 //    use spread operator to create a new object
 
-export const addSneakerCount = () => {}
+export const addSneakerCount = ({ shoes, ...rest }) => {
+  return {
+    ...rest,
+    sneakerCount: shoes.length
+  }
+}
+
 
 // INPUT: brands from data.js
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
-export const getBrandNames = () => {}
+export const getBrandNames = (brands) => {
+  return Object.keys(brands)
+}
+
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
-export const totalSneakerCount = () => {}
+export const totalSneakerCount = (data) => {
+  return Object.values(data)
+    .map(brand => brand.shoes.length)
+    .reduce((acc, curr) => acc + curr, 0)
+}
+
 
 // INPUT: An object
 // OUTPUT: An array with key value pairs converted to arrays
@@ -97,6 +115,9 @@ export const totalSneakerCount = () => {}
 // convertToArray({}) => []
 // Source: https://edabit.com/challenge/pPNAs5PvB3WvnDwDM
 
-export const convertToArray = () => {}
+export const convertToArray = (obj) => {
+  return Object.entries(obj)
+}
+
 
 //
