@@ -11,52 +11,52 @@ import {
 } from '..'
 import { brands } from '../data'
 
-test('getName should return the name attribute from an object', () => {
-  expect(getName({ name: 'Benny' })).toBe('Benny')
-})
+// test('getName should return the name attribute from an object', () => {
+//   expect(getName({ name: 'Benny' })).toBe('Benny')
+// })
 
-test.skip('printAddress should return a formatted string', () => {
-  const input = {
-    name: 'Bob Smith',
-    address: { street: 'Main Street', number: 123, city: 'Anytown', country: 'USA' },
-  }
-  expect(printAddress(input)).toBe('Bob Smith lives at 123 Main Street, Anytown, USA')
-})
+// test('printAddress should return a formatted string', () => {
+//   const input = {
+//     name: 'Bob Smith',
+//     address: { street: 'Main Street', number: 123, city: 'Anytown', country: 'USA' },
+//   }
+//   expect(printAddress(input)).toBe('Bob Smith lives at 123 Main Street, Anytown, USA')
+// })
 
-test.skip('printUserInfo should return a formatted string', () => {
-  const user = {
-    username: 'bobloblaw',
-    name: {
-      first: 'Bob',
-      last: 'Loblaw',
-    },
-    info: {
-      favorites: { food: 'pizza', color: 'purple' },
-      pet: { type: 'cat', name: 'Fluffy' },
-      address: { street: 'Main Street', number: 123, city: 'Anytown', country: 'USA' },
-    },
-  }
-  expect(printUserInfo(user)).toBe(`
-    Username: bobloblaw,
-    Full Name: Bob Loblaw,
-    Favorite Color: purple,
-    Favorite Food: pizza,
-    Pet Name: Fluffy,
-    Address: 123 Main Street, Anytown, USA
-    `)
-})
+// test('printUserInfo should return a formatted string', () => {
+//   const user = {
+//     username: 'bobloblaw',
+//     name: {
+//       first: 'Bob',
+//       last: 'Loblaw',
+//     },
+//     info: {
+//       favorites: { food: 'pizza', color: 'purple' },
+//       pet: { type: 'cat', name: 'Fluffy' },
+//       address: { street: 'Main Street', number: 123, city: 'Anytown', country: 'USA' },
+//     },
+//   }
+//   expect(printUserInfo(user)).toBe(`
+//     Username: bobloblaw,
+//     Full Name: Bob Loblaw,
+//     Favorite Color: purple,
+//     Favorite Food: pizza,
+//     Pet Name: Fluffy,
+//     Address: 123 Main Street, Anytown, USA
+//     `)
+// })
 
-test.skip('getSum should return the sum of inputs', () => {
+test('getSum should return the sum of inputs', () => {
   expect(getSum(1, 2, 3)).toBe(6)
   expect(getSum(1, 2, 3, 4, 5)).toBe(15)
 })
 
-test.skip('getFirstTwoArgs returns the first two arguments as an array', () => {
+test('getFirstTwoArgs returns the first two arguments as an array', () => {
   expect(getFirstTwoArgs(1, 2, 3, 4, 5)).toStrictEqual([1, 2, [3, 4, 5]])
   expect(getFirstTwoArgs('a', 'b', 'c', 'd')).toStrictEqual(['a', 'b', ['c', 'd']])
 })
 
-test.skip('addSneakerCount should append the sneaker count to the object', () => {
+test('addSneakerCount should append the sneaker count to the object', () => {
   const nike = {
     shoes: ['Air Max', 'Air Force', 'Air Jordan', 'Air Mag', 'Pegasus', 'Kobe'],
     slogan: 'Just Do It',
@@ -67,7 +67,7 @@ test.skip('addSneakerCount should append the sneaker count to the object', () =>
   expect(addSneakerCount(nike)).not.toBe(nike)
 })
 
-test.skip('getBrandNames should return an array of the names of the sneaker brands', () => {
+test.only('getBrandNames should return an array of the names of the sneaker brands', () => {
   expect(getBrandNames(brands)).toStrictEqual(['Nike', 'Puma', 'Adidas'])
 })
 
