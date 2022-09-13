@@ -4,7 +4,7 @@
 // REQS: use destructuring and the function should be a single line
 
 export const getName = ({ name }) => {
-  return name;
+  return name
 }
 
 // INPUT: an object with a nested "address" attribute such as
@@ -19,12 +19,18 @@ export const printAddress = ({ name, address }) => {
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
 // as part of the function definitions (i.e. there should be no dots in the template literals)
-export const printUserInfo = ({ 
-  username, 
-  name: {first, last}, 
-  info: {favorites: {food, color}},
-  info: {pet: {type, name}},
-  info: {address: {street, number, city, country}}
+export const printUserInfo = ({
+  username,
+  name: { first, last },
+  info: {
+    favorites: { food, color },
+  },
+  info: {
+    pet: { type, name },
+  },
+  info: {
+    address: { street, number, city, country },
+  },
 }) => {
   return `
     Username: ${username},
@@ -42,9 +48,9 @@ export const printUserInfo = ({
 //  getSum(1, 2, 3) === 6
 //  getSum(1, 2, 3, 4, 5) === 15
 export const getSum = (...rest) => {
-  let result = 0;
-  rest.forEach(num => result += num)
-  return result;
+  let result = 0
+  rest.forEach((num) => (result += num))
+  return result
 }
 
 // INPUT: an unknown number of arguments
@@ -53,7 +59,7 @@ export const getSum = (...rest) => {
 // getFirstTwoArgs(1, 2, 3, 4, 5) should return [1, 2, [3, 4, 5]]
 // getFirstTwoArgs('a', 'b', 'c', 'd') should return ['a', 'b', ['c', 'd']]
 export const getFirstTwoArgs = (arg1, arg2, ...rest) => {
-  return [arg1, arg2, rest];
+  return [arg1, arg2, rest]
 }
 
 // INPUT: an object with the following structure
@@ -85,22 +91,22 @@ export const addSneakerCount = ({ shoes, ...rest }) => {
 // OUTPUT: the brand names listed
 // REQS: use Object.keys to solve
 export const getBrandNames = (data) => {
-  const arr = [];
-  Object.keys(data).forEach(key => arr.push(key))
-  return arr;
+  const arr = []
+  Object.keys(data).forEach((key) => arr.push(key))
+  return arr
 }
 
 // INPUT: brands from data.js
 // OUTPUT: total number of sneaker types across all brands (14)
 export const totalSneakerCount = (data) => {
-  let result = 0;
-  Object.values(data).forEach(brand => {
+  let result = 0
+  Object.values(data).forEach((brand) => {
     if (brand.shoes) {
-      result += brand.shoes.length;
+      result += brand.shoes.length
     }
   })
-  return result;
- }
+  return result
+}
 
 // INPUT: An object
 // OUTPUT: An array with key value pairs converted to arrays
@@ -111,7 +117,7 @@ export const totalSneakerCount = (data) => {
 
 export const convertToArray = (data) => {
   //method 1
-  return Object.entries(data);
+  return Object.entries(data)
 
   // method 2
   // const keys = Object.keys(data);
