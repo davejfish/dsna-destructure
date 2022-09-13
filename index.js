@@ -109,6 +109,19 @@ export const totalSneakerCount = (data) => {
 // convertToArray({}) => []
 // Source: https://edabit.com/challenge/pPNAs5PvB3WvnDwDM
 
-export const convertToArray = () => {}
+export const convertToArray = (data) => {
+  //method 1
+  return Object.entries(data);
+
+  // method 2
+  // const keys = Object.keys(data);
+  // const result = [];
+  // for (let i = 0; i < keys.length; i++) {
+  //   const arr = [];
+  //   arr.push(keys[i], data[keys[i]])
+  //   result.push(arr);
+  // }
+  // return result;
+}
 
 //
