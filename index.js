@@ -18,7 +18,7 @@ export const printAddress = ({ name, address }) => {
 
 // REFACTOR CHALLENGE
 // Refactor this function so that all values in the object are destructured
-// as part of the funciton definitions (i.e. there should be no dots in the template literals)
+// as part of the function definitions (i.e. there should be no dots in the template literals)
 export const printUserInfo = ({ 
   username, 
   name: {first, last}, 
